@@ -1,31 +1,38 @@
+class Solution(object):
+    def convert(self, s, numRows):
+        """
+        :type s: str
+        :type numRows: int
+        :rtype: str
+        """
+        
+        word= s
+        resArr = []
+        res =''
+        arrCount = 2*numRows-2
 
-word = 'PAYPALISHIRING'
-numRows = 3 
-resArr = []
+
+        for i in range(2*numRows-2):
+            resArr.append(word[i::2*numRows-2])
+        
+
+        if numRows > 1 :
+            res= resArr[0]
+       
+
+            for i in range(numRows-2):
+                arr1 = i +1
+                arr2 = arrCount-1-i
+   
+                for j in range(len(resArr[arr2])):
+                    res = res + resArr[arr1][j]
+                    res = res + resArr[arr2][j]
+                if len(resArr[arr1]) > len(resArr[arr2]):
+                    res = res + resArr[arr1][-1]
 
 
-for i in range(2*numRows-2):
-    resArr.append(word[i::2*numRows-2])
-    print(resArr[i])
+            res = res + resArr[numRows-1]
+        else:
+            res = s
 
-
-
-    
-
-for i in range(numRows):
-    if i==0 :
-        res = res+resArr[0]
-    elif i < numRows-1:
-        for i in range(numRows-2):
-            counter = (2*numRows-3)-i
-            print(counter)
-            for j in range(len(resArr[counter])):
-                res = res+ resArr[i+1][j]
-                res = res + resArr[counter][j]
-                print(len(resArr[counter]))
-            if(len(resArr[counter]) < len(resArr[i+1])):
-                res = res + resArr[i+1][-1]
-    elif i == numRows-1:   
-        res = res+ resArr[numRows-1]
-print(res)
-    
+        return res 
