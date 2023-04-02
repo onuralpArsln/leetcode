@@ -5,7 +5,7 @@ class Solution(object):
         :type numRows: int
         :rtype: str
         """
-        
+         
         word= s
         resArr = []
         res =''
@@ -36,3 +36,4 @@ class Solution(object):
             res = s
 
         return res 
+         
