@@ -14,3 +14,14 @@ class Solution(object):
             result+= math.factorial(n-i)/(math.factorial(n-(2*i))*math.factorial(i))
 
         return result
+
+
+"""
+runtime
+ Beats
+96.10%
+Memory
+13.2 MB
+Beats
+98.53%
+"""
