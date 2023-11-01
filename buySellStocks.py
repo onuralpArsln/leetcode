@@ -21,3 +21,14 @@ class Solution(object):
                         maxProfit = buyDay - j  
 
         return maxProfit
+
+
+#optimized result
+        minDay = prices[0]
+        maxProfit=0
+
+        for i in prices:
+            minDay=min(i,minDay)
+            maxProfit = max (maxProfit, i-minDay)
+            
+        return maxProfit
