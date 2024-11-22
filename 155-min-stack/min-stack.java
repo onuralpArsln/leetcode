@@ -7,7 +7,7 @@ class MinStack {
     public MinStack() {
         realStack = new int[15600];
         realPointer = -1;
-        minValueStack = new int[11100];
+        minValueStack = new int[1110];
         minValuePointer = -1;
     }
 
